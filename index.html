@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b32">
+  <meta name="description" content="Specialist Mercedes-Benz servicing, diagnostics, repairs, and maintenance at Chuma Benz. Request a workshop appointment for your Mercedes.">
+  <title>Chuma Benz | Mercedes-Benz Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --forest: #173b32;
+      --forest-deep: #102d26;
+      --forest-soft: #254d40;
+      --paper: #f8f6f0;
+      --white: #fffefa;
+      --ink: #20251f;
+      --muted: #73766e;
+      --line: #e5e2d9;
+      --copper: #bf6548;
+      --gold: #d6aa64;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Manrope", "DM Sans", sans-serif;
+      --ease: cubic-bezier(.22, .72, .22, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: var(--sans); font-size: 14px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body.nav-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+    ::selection { color: var(--white); background: var(--forest); }
+    .container { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--copper); font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+    .eyebrow::before { width: 22px; height: 1px; background: currentColor; content: ""; }
+    .section-title { max-width: 660px; margin: 14px 0 16px; font-family: var(--serif); font-size: clamp(35px, 4.3vw, 54px); font-weight: 500; line-height: 1.15; letter-spacing: 0; }
+    .section-lead { max-width: 520px; margin: 0; color: var(--muted); font-size: 14px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 0 21px; border: 1px solid transparent; font-size: 12px; font-weight: 800; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease); }
+    .button:hover { transform: translateY(-2px); }
+    .button svg, .text-link svg { width: 16px; height: 16px; stroke-width: 1.8; }
+    .button-light { color: var(--forest-deep); background: var(--white); }
+    .button-light:hover { background: #f0e9dc; }
+    .button-outline-light { color: var(--white); border-color: rgb(255 255 255 / 42%); background: transparent; }
+    .button-outline-light:hover { border-color: var(--white); background: rgb(255 255 255 / 10%); }
+    .button-forest { color: var(--white); background: var(--forest); }
+    .button-forest:hover { background: var(--forest-soft); }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 800; }
+    .text-link:hover { color: var(--copper); }
+
+    .topbar { height: 34px; color: #f8f6f0; background: var(--forest-deep); }
+    .topbar-inner { display: flex; height: 100%; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; letter-spacing: .35px; }
+    .topbar-note, .topbar-contact { display: inline-flex; align-items: center; gap: 8px; }
+    .topbar-inner svg { width: 13px; height: 13px; color: var(--gold); }
+
+    .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgb(23 59 50 / 9%); background: rgb(255 254 250 / 96%); backdrop-filter: blur(16px); }
+    .nav-row { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; flex: none; align-items: center; gap: 10px; }
+    .brand-mark { display: grid; width: 37px; height: 37px; align-items: center; justify-content: center; color: var(--gold); border: 1px solid rgb(214 170 100 / 65%); background: var(--forest); }
+    .brand-mark svg { width: 19px; height: 19px; }
+    .brand-name { display: grid; color: var(--forest); font-size: 13px; font-weight: 800; line-height: 1.25; letter-spacing: 1.1px; }
+    .brand-name small { margin-top: 4px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: 1.55px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links > a:not(.button) { color: #44473f; font-size: 11px; font-weight: 700; transition: color .2s; }
+    .nav-links > a:not(.button):hover { color: var(--copper); }
+    .nav-links .button { min-height: 42px; padding-inline: 16px; font-size: 11px; }
+    .menu-toggle { display: none; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--forest); border: 1px solid var(--line); background: transparent; cursor: pointer; }
+    .menu-toggle svg { width: 20px; height: 20px; }
+
+    .hero { position: relative; display: flex; min-height: min(700px, calc(100svh - 106px)); min-height: clamp(550px, 76svh, 710px); align-items: center; overflow: hidden; color: var(--white); background-color: #252921; background-image: linear-gradient(90deg, rgb(14 26 22 / 82%) 0%, rgb(14 26 22 / 61%) 44%, rgb(14 26 22 / 18%) 100%), linear-gradient(0deg, rgb(16 24 19 / 32%), transparent 44%), url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=2200&q=85"); background-position: center 55%; background-size: cover; }
+    .hero-content { position: relative; z-index: 1; padding-block: 90px; animation: arrive .8s var(--ease) both; }
+    .hero .eyebrow { color: #e6bd7b; }
+    .hero h1 { max-width: 670px; margin: 22px 0 18px; font-family: var(--serif); font-size: clamp(49px, 7.8vw, 94px); font-weight: 500; line-height: .99; letter-spacing: 0; }
+    .hero h1 span { color: #e6bd7b; font-style: italic; }
+    .hero-copy { max-width: 470px; margin: 0; color: rgb(255 255 255 / 82%); font-size: 14px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 31px; }
+    .hero .hero-detail { display: flex; align-items: center; gap: 11px; margin-top: 49px; color: rgb(255 255 255 / 76%); font-size: 11px; }
+    .hero-detail svg { width: 17px; height: 17px; color: #e6bd7b; }
+    .hero-seal { position: absolute; right: max(32px, calc((100vw - 1160px) / 2)); bottom: 37px; display: flex; width: 94px; height: 94px; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgb(255 255 255 / 48%); border-radius: 50%; background: rgb(22 42 33 / 43%); color: var(--white); font-size: 8px; font-weight: 800; letter-spacing: 1.5px; line-height: 1.7; text-align: center; text-transform: uppercase; backdrop-filter: blur(5px); }
+    .hero-seal svg { width: 21px; height: 21px; margin-bottom: 3px; color: var(--gold); }
+
+    .trust-strip { border-bottom: 1px solid var(--line); background: var(--paper); }
+    .trust-row { display: grid; min-height: 83px; grid-template-columns: repeat(4, 1fr); align-items: center; }
+    .trust-item { display: flex; min-height: 40px; align-items: center; justify-content: center; gap: 11px; padding: 7px 12px; border-right: 1px solid var(--line); }
+    .trust-item:first-child { justify-content: flex-start; padding-left: 0; }
+    .trust-item:last-child { justify-content: flex-end; padding-right: 0; border-right: 0; }
+    .trust-item svg { width: 18px; height: 18px; flex: none; color: var(--copper); stroke-width: 1.7; }
+    .trust-item span { color: #4c4e47; font-size: 10px; font-weight: 800; line-height: 1.5; }
+
+    .intro { padding-block: 100px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(36px, 8vw, 110px); }
+    .intro-visual { position: relative; min-height: 415px; }
+    .intro-visual img { position: absolute; inset: 0 38px 30px 0; width: calc(100% - 38px); height: calc(100% - 30px); object-fit: cover; }
+    .intro-caption { position: absolute; right: 0; bottom: 0; display: flex; width: min(253px, 74%); min-height: 104px; align-items: center; gap: 14px; padding: 20px; color: var(--white); background: var(--forest); }
+    .intro-caption svg { width: 25px; height: 25px; flex: none; color: var(--gold); }
+    .intro-caption strong, .intro-caption span { display: block; }
+    .intro-caption strong { margin-bottom: 3px; font-size: 12px; }
+    .intro-caption span { color: rgb(255 255 255 / 72%); font-size: 10px; }
+    .intro-copy .section-title { max-width: 470px; }
+    .intro-copy .section-lead { font-size: 13px; line-height: 1.9; }
+    .intro-points { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin: 25px 0 26px; padding: 0; list-style: none; }
+    .intro-points li { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; font-weight: 700; }
+    .intro-points svg { width: 15px; height: 15px; flex: none; margin-top: 3px; color: var(--copper); }
+
+    .services { padding-block: 91px 100px; background: var(--paper); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+    .services .section-title { margin-bottom: 9px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #dad7ce; border-left: 1px solid #dad7ce; }
+    .service-card { min-height: 205px; padding: 27px 25px 25px; border-right: 1px solid #dad7ce; border-bottom: 1px solid #dad7ce; background: var(--white); transition: background .25s var(--ease), transform .25s var(--ease); }
+    .service-card:hover { position: relative; z-index: 1; transform: translateY(-4px); background: #f4f0e6; }
+    .service-icon { display: grid; width: 37px; height: 37px; align-items: center; justify-content: center; margin-bottom: 17px; color: var(--copper); border: 1px solid #e5ddd0; }
+    .service-icon svg { width: 19px; height: 19px; stroke-width: 1.7; }
+    .service-card h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 19px; font-weight: 600; }
+    .service-card p { max-width: 290px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
+
+    .specialist { display: grid; min-height: 410px; grid-template-columns: 1fr 1fr; color: var(--white); background: var(--forest-deep); }
+    .specialist-photo { min-height: 410px; background: url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1150&q=85") center 52% / cover no-repeat; }
+    .specialist-content { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 68px clamp(36px, 7vw, 108px); }
+    .specialist-content .eyebrow { color: var(--gold); }
+    .specialist-content .section-title { font-size: clamp(33px, 4vw, 48px); }
+    .specialist-content p { max-width: 435px; margin: 0; color: rgb(255 255 255 / 72%); font-size: 12px; line-height: 1.9; }
+    .specialist-points { display: grid; gap: 11px; margin: 22px 0 26px; padding: 0; list-style: none; }
+    .specialist-points li { display: flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 700; }
+    .specialist-points svg { width: 15px; height: 15px; color: var(--gold); }
+
+    .process { padding-block: 97px 92px; }
+    .process .section-heading { align-items: end; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; padding-top: 18px; }
+    .process-step { position: relative; padding-top: 24px; border-top: 1px solid var(--line); }
+    .process-number { position: absolute; top: -13px; right: 0; padding-left: 9px; color: var(--copper); background: var(--white); font-family: var(--serif); font-size: 16px; font-style: italic; }
+    .process-step h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 22px; font-weight: 500; }
+    .process-step p { max-width: 310px; margin: 0; color: var(--muted); font-size: 11px; }
+
+    .quote-band { position: relative; overflow: hidden; padding-block: 70px; color: var(--white); background: var(--copper); }
+    .quote-band::after { position: absolute; right: 3%; bottom: -130px; width: 300px; height: 300px; border: 1px solid rgb(255 255 255 / 22%); border-radius: 50%; content: ""; }
+    .quote-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .quote-content .eyebrow { color: #fae8cb; }
+    .quote-content h2 { max-width: 680px; margin: 10px 0 0; font-family: var(--serif); font-size: clamp(27px, 4vw, 42px); font-weight: 500; line-height: 1.2; }
+    .quote-content .button { flex: none; }
+
+    .contact { padding-block: 100px; background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(38px, 7vw, 94px); align-items: start; }
+    .contact-copy .section-title { max-width: 410px; }
+    .contact-copy .section-lead { max-width: 390px; font-size: 12px; line-height: 1.9; }
+    .contact-details { display: grid; gap: 17px; margin-top: 31px; }
+    .contact-detail { display: flex; align-items: center; gap: 13px; }
+    .contact-detail-icon { display: grid; width: 37px; height: 37px; flex: none; align-items: center; justify-content: center; color: var(--forest); border: 1px solid var(--line); background: var(--white); }
+    .contact-detail-icon svg { width: 17px; height: 17px; }
+    .contact-detail small, .contact-detail strong { display: block; }
+    .contact-detail small { color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; }
+    .contact-detail strong { margin-top: 2px; font-size: 11px; }
+    .contact-form { padding: clamp(23px, 4.5vw, 42px); border: 1px solid var(--line); background: var(--white); box-shadow: 0 18px 48px rgb(32 37 31 / 5%); }
+    .form-intro { display: flex; align-items: center; gap: 8px; color: var(--copper); font-size: 9px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+    .form-intro svg { width: 14px; height: 14px; }
+    .form-heading { margin: 5px 0 21px; font-family: var(--serif); font-size: 25px; font-weight: 500; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 13px; }
+    .field { display: grid; gap: 6px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { font-size: 10px; font-weight: 800; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 43px; padding: 10px 11px; color: var(--ink); border: 1px solid #e1ded5; border-radius: 0; outline: none; background: #fffefa; font-size: 11px; }
+    .field input:hover, .field select:hover, .field textarea:hover { border-color: #bdb9ad; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--forest); box-shadow: 0 0 0 2px rgb(23 59 50 / 10%); }
+    .field textarea { min-height: 78px; resize: vertical; }
+    .form-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 19px; }
+    .form-note { max-width: 225px; margin: 0; color: var(--muted); font-size: 9px; line-height: 1.6; }
+    .form-bottom .button { min-height: 45px; padding-inline: 14px; font-size: 10px; cursor: pointer; }
+
+    .faq { padding-block: 89px 96px; }
+    .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(35px, 8vw, 104px); }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 19px 0; font-size: 12px; font-weight: 800; cursor: pointer; list-style: none; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary svg { width: 16px; height: 16px; flex: none; color: var(--copper); transition: transform .2s; }
+    .faq-list details[open] summary svg { transform: rotate(45deg); }
+    .faq-list details p { max-width: 590px; margin: -2px 0 18px; color: var(--muted); font-size: 11px; }
+
+    .footer { padding-block: 46px 22px; color: rgb(255 255 255 / 78%); background: var(--forest-deep); }
+    .footer-main { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding-bottom: 35px; }
+    .footer .brand-name { color: var(--white); }
+    .footer .brand-name small { color: rgb(255 255 255 / 57%); }
+    .footer-about { max-width: 310px; margin: 15px 0 0; color: rgb(255 255 255 / 57%); font-size: 10px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 13px 24px; padding-top: 7px; }
+    .footer-nav a { font-size: 10px; font-weight: 700; }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid rgb(255 255 255 / 15%); color: rgb(255 255 255 / 51%); font-size: 9px; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s var(--ease), transform .65s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (min-width: 1400px) { .hero { min-height: 720px; } }
+    @media (max-width: 780px) {
+      .container { width: min(100% - 40px, 600px); }
+      .nav-row { min-height: 66px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 20px 20px; border-bottom: 1px solid var(--line); background: var(--white); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links > a:not(.button) { padding: 13px 4px; border-bottom: 1px solid var(--line); }
+      .nav-links .button { margin-top: 13px; }
+      .hero { min-height: 620px; background-position: 59% center; }
+      .hero h1 { max-width: 530px; font-size: clamp(48px, 10vw, 76px); }
+      .trust-row { grid-template-columns: 1fr 1fr; padding-block: 8px; }
+      .trust-item, .trust-item:first-child, .trust-item:last-child { justify-content: flex-start; padding: 10px 8px; border-right: 0; }
+      .intro { padding-block: 75px; }
+      .intro-grid { grid-template-columns: 1fr; gap: 35px; }
+      .intro-visual { min-height: 370px; }
+      .services { padding-block: 73px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .specialist { grid-template-columns: 1fr; }
+      .specialist-photo { min-height: 320px; }
+      .specialist-content { padding: 55px max(24px, calc((100vw - 600px) / 2)); }
+      .process { padding-block: 72px; }
+      .contact { padding-block: 73px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+      .faq { padding-block: 73px; }
+      .faq-grid { grid-template-columns: 1fr; gap: 23px; }
+    }
+    @media (max-width: 520px) {
+      .container { width: calc(100% - 36px); }
+      .topbar-inner { font-size: 9px; }
+      .topbar-note { gap: 5px; }
+      .topbar-contact { gap: 5px; }
+      .hero { min-height: 625px; background-position: 58% center; background-image: linear-gradient(90deg, rgb(14 26 22 / 79%), rgb(14 26 22 / 42%)), linear-gradient(0deg, rgb(14 26 22 / 32%), transparent 50%), url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80"); }
+      .hero-content { padding-block: 68px 91px; }
+      .hero h1 { font-size: clamp(47px, 12vw, 61px); }
+      .hero-copy { max-width: 355px; font-size: 12px; }
+      .hero-actions { align-items: stretch; flex-direction: column; max-width: 270px; }
+      .hero .hero-detail { max-width: 285px; align-items: flex-start; margin-top: 30px; font-size: 10px; }
+      .hero-detail svg { flex: none; }
+      .hero-seal { right: 18px; bottom: 19px; width: 72px; height: 72px; font-size: 7px; }
+      .hero-seal svg { width: 17px; height: 17px; }
+      .trust-item span { font-size: 9px; }
+      .trust-item svg { width: 16px; }
+      .intro-visual { min-height: 295px; }
+      .intro-visual img { inset: 0 23px 25px 0; width: calc(100% - 23px); height: calc(100% - 25px); }
+      .intro-caption { min-height: 85px; padding: 13px; }
+      .intro-caption strong { font-size: 10px; }
+      .intro-caption span { font-size: 9px; }
+      .intro-points { gap: 12px 10px; }
+      .intro-points li { font-size: 9px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; padding: 22px; }
+      .service-icon { margin-bottom: 11px; }
+      .specialist-photo { min-height: 260px; }
+      .specialist-content { padding: 44px 22px 50px; }
+      .process-grid { grid-template-columns: 1fr; gap: 22px; }
+      .process-step { padding-top: 18px; }
+      .quote-band { padding-block: 48px; }
+      .quote-content { align-items: flex-start; flex-direction: column; }
+      .contact-form { padding: 21px 16px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-wide { grid-column: auto; }
+      .form-bottom { align-items: flex-start; flex-direction: column; }
+      .form-bottom .button { width: 100%; }
+      .footer-main { flex-direction: column; }
+      .footer-bottom { flex-direction: column; gap: 7px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-note"><i data-lucide="award"></i> Independent Mercedes-Benz specialists</span>
+      <a class="topbar-contact" href="#contact"><i data-lucide="calendar-days"></i> Workshop appointments by request</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#home" aria-label="Chuma Benz home">
+        <span class="brand-mark"><i data-lucide="wrench"></i></span>
+        <span class="brand-name">CHUMA BENZ<small>MERCEDES-BENZ SPECIALIST</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><i data-lucide="menu"></i></button>
+      <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#faq">FAQs</a>
+        <a class="button button-forest" href="#contact">Request a service <i data-lucide="arrow-up-right"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <span class="eyebrow">Specialist care. A better drive.</span>
+        <h1 id="hero-title">Mercedes-Benz<br>deserves <span>better.</span></h1>
+        <p class="hero-copy">Thoughtful diagnostics, skilled repairs and dependable maintenance for the car you love to drive.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#contact">Book a workshop visit <i data-lucide="arrow-right"></i></a>
+          <a class="button button-outline-light" href="#services">Explore our services</a>
+        </div>
+        <div class="hero-detail"><i data-lucide="badge-check"></i><span>Dedicated Mercedes-Benz expertise, without the dealership runaround.</span></div>
+      </div>
+      <div class="hero-seal" aria-label="Specialists in Mercedes-Benz"><i data-lucide="settings-2"></i> Mercedes<br>specialists</div>
+    </section>
+
+    <section class="trust-strip" aria-label="Our service standards">
+      <div class="container trust-row">
+        <div class="trust-item"><i data-lucide="scan-search"></i><span>Careful, accurate diagnostics</span></div>
+        <div class="trust-item"><i data-lucide="settings"></i><span>Mercedes-Benz focused</span></div>
+        <div class="trust-item"><i data-lucide="messages-square"></i><span>Clear, personal communication</span></div>
+        <div class="trust-item"><i data-lucide="clipboard-check"></i><span>Repairs discussed before work</span></div>
+      </div>
+    </section>
+
+    <section class="intro" id="about">
+      <div class="container intro-grid">
+        <div class="intro-visual reveal">
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1000&q=85" alt="A technician working in a professional automotive service workshop" loading="lazy" width="1000" height="800">
+          <div class="intro-caption"><i data-lucide="circle-gauge"></i><div><strong>Care for the whole car</strong><span>From fault finding to scheduled servicing.</span></div></div>
+        </div>
+        <div class="intro-copy reveal">
+          <span class="eyebrow">A workshop that knows your car</span>
+          <h2 class="section-title">Precision matters. So does trust.</h2>
+          <p class="section-lead">Chuma Benz is dedicated to Mercedes-Benz cars. We take time to understand the fault, explain what your car needs and carry out the work with care.</p>
+          <ul class="intro-points">
+            <li><i data-lucide="check"></i><span>Diagnostics before guesswork</span></li>
+            <li><i data-lucide="check"></i><span>Repairs explained in plain language</span></li>
+            <li><i data-lucide="check"></i><span>Servicing for your model and mileage</span></li>
+            <li><i data-lucide="check"></i><span>Your approval before repairs begin</span></li>
+          </ul>
+          <a class="text-link" href="#contact">Tell us what your car needs <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">What we work on</span><h2 class="section-title">Specialist care, from bumper to bumper.</h2><p class="section-lead">Practical workshop services for Mercedes-Benz owners, tailored to the symptoms and model you bring in.</p></div>
+          <a class="text-link" href="#contact">Request a service <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="scan-line"></i></span><h3>Computer diagnostics</h3><p>Investigate warning lights, electronic faults and drivability issues before deciding on a repair.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="disc-3"></i></span><h3>Brake service</h3><p>Brake inspections and servicing for stopping performance, pedal concerns and visible wear.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="cog"></i></span><h3>Engine &amp; transmission</h3><p>Investigate engine and transmission symptoms, leaks, unusual noises and performance concerns.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="thermometer"></i></span><h3>Cooling system</h3><p>Checks and repairs for coolant leaks, overheating and temperature or circulation concerns.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="battery-charging"></i></span><h3>Electrical repairs</h3><p>Fault finding for batteries, starting and charging, lighting, sensors and electrical components.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><i data-lucide="clipboard-list"></i></span><h3>Routine maintenance</h3><p>Scheduled maintenance and vehicle checks to help keep your Mercedes ready for the road.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="specialist" aria-labelledby="specialist-title">
+      <div class="specialist-photo" role="img" aria-label="A car being inspected inside an automotive workshop"></div>
+      <div class="specialist-content reveal">
+        <span class="eyebrow">The right approach</span>
+        <h2 class="section-title" id="specialist-title">Good work begins with a proper diagnosis.</h2>
+        <p>Replacing parts without understanding the problem wastes time and money. We focus on investigating your concern, discussing what we find and agreeing the next step with you.</p>
+        <ul class="specialist-points">
+          <li><i data-lucide="check-circle-2"></i> We listen to your symptoms and concerns</li>
+          <li><i data-lucide="check-circle-2"></i> We explain findings before recommending work</li>
+          <li><i data-lucide="check-circle-2"></i> No additional repairs without your approval</li>
+        </ul>
+        <a class="button button-light" href="#contact">Talk to the workshop <i data-lucide="arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">A straightforward visit</span><h2 class="section-title">From concern to clear next steps.</h2></div>
+          <p class="section-lead">Start with a few details. We will follow up to discuss the fault, your Mercedes and a suitable workshop visit.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><span class="process-number">01</span><h3>Tell us what is happening</h3><p>Share your model, the issue you have noticed and how we can get in touch.</p></article>
+          <article class="process-step reveal"><span class="process-number">02</span><h3>We discuss the right check</h3><p>We review your request and contact you to clarify the concern and arrange a visit.</p></article>
+          <article class="process-step reveal"><span class="process-number">03</span><h3>Approve the work</h3><p>We explain our findings and talk through recommended repairs before proceeding.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band" aria-label="Request an appointment">
+      <div class="container quote-content reveal">
+        <div><span class="eyebrow">Let's get to know your Mercedes</span><h2>Have a warning light, a new noise or a service due?</h2></div>
+        <a class="button button-light" href="#contact">Request a workshop visit <i data-lucide="arrow-up-right"></i></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Get in touch</span>
+          <h2 class="section-title">Tell us about your Mercedes.</h2>
+          <p class="section-lead">Send a service request and include the details you have. We will be in touch to talk through your concern and arrange a suitable time.</p>
+          <div class="contact-details">
+            <div class="contact-detail"><span class="contact-detail-icon"><i data-lucide="car-front"></i></span><div><small>Workshop focus</small><strong>Mercedes-Benz vehicles</strong></div></div>
+            <div class="contact-detail"><span class="contact-detail-icon"><i data-lucide="calendar-check"></i></span><div><small>Visits</small><strong>Arranged by appointment</strong></div></div>
+            <div class="contact-detail"><span class="contact-detail-icon"><i data-lucide="mail"></i></span><div><small>Service enquiries</small><strong>Send us a request below</strong></div></div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="booking-form">
+          <div class="form-intro"><i data-lucide="clipboard-pen-line"></i> Service enquiry</div>
+          <h3 class="form-heading">Request a workshop visit</h3>
+          <div class="form-grid">
+            <div class="field"><label for="customer-name">Your name</label><input id="customer-name" name="name" autocomplete="name" placeholder="e.g. Alex Johnson" required></div>
+            <div class="field"><label for="customer-phone">Phone number</label><input id="customer-phone" name="phone" type="tel" autocomplete="tel" placeholder="Best number to reach you" required></div>
+            <div class="field"><label for="customer-email">Email address <span aria-hidden="true">(optional)</span></label><input id="customer-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+            <div class="field"><label for="vehicle-model">Mercedes-Benz model</label><input id="vehicle-model" name="vehicle" placeholder="e.g. C-Class, GLE, E-Class" required></div>
+            <div class="field"><label for="vehicle-year">Vehicle year <span aria-hidden="true">(optional)</span></label><input id="vehicle-year" name="year" type="number" min="1950" max="2099" step="1" inputmode="numeric" placeholder="e.g. 2018"></div>
+            <div class="field"><label for="service-type">What do you need?</label><select id="service-type" name="service" required><option value="" disabled selected>Select a service</option><option>Diagnostics / warning light</option><option>Routine maintenance</option><option>Brake service</option><option>Engine or transmission</option><option>Electrical fault</option><option>Cooling system</option><option>Other repair</option></select></div>
+            <div class="field"><label for="preferred-date">Preferred appointment date <span aria-hidden="true">(optional)</span></label><input id="preferred-date" name="date" type="date"></div>
+            <div class="field field-wide"><label for="service-message">Describe the issue</label><textarea id="service-message" name="message" placeholder="When did it start? What have you noticed?" required></textarea></div>
+          </div>
+          <div class="form-bottom"><p class="form-note">Submitting opens your email app with the request filled in for you.</p><button class="button button-forest" type="submit">Prepare my request <i data-lucide="arrow-right"></i></button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="reveal"><span class="eyebrow">A few useful answers</span><h2 class="section-title">Before you book.</h2><p class="section-lead">A little more about how Chuma Benz approaches Mercedes-Benz servicing and repairs.</p></div>
+        <div class="faq-list reveal">
+          <details><summary>Do you work on all Mercedes-Benz models?<i data-lucide="plus"></i></summary><p>We focus on Mercedes-Benz vehicles. Include your model and year in your request so we can confirm the service you need.</p></details>
+          <details><summary>Can I ask about a warning light before booking?<i data-lucide="plus"></i></summary><p>Yes. Describe the warning and any symptoms in your request. We will follow up to discuss a suitable diagnostic check.</p></details>
+          <details><summary>Will repairs start before I approve them?<i data-lucide="plus"></i></summary><p>Recommended work is discussed with you first. We seek your approval before proceeding with additional repairs.</p></details>
+          <details><summary>How do I arrange a workshop visit?<i data-lucide="plus"></i></summary><p>Send a request through the form above with your Mercedes model, contact number and a short description. The workshop will follow up to arrange a suitable time.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#home" aria-label="Chuma Benz home"><span class="brand-mark"><i data-lucide="wrench"></i></span><span class="brand-name">CHUMA BENZ<small>MERCEDES-BENZ SPECIALIST</small></span></a>
+          <p class="footer-about">Dedicated workshop care for Mercedes-Benz. Clear advice, considered diagnostics and repairs discussed with you.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="#about">About</a><a href="#services">Services</a><a href="#process">How it works</a><a href="#faq">FAQs</a><a href="#contact">Request a service</a></nav>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="year">2026</span> Chuma Benz. All rights reserved.</span><span>Independent Mercedes-Benz specialist.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const bookingEmail = "hello@chumabenz.com";
+    const bookingForm = document.querySelector("#booking-form");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("#site-navigation");
+
+    if (window.lucide) lucide.createIcons();
+    document.querySelector("#year").textContent = new Date().getFullYear();
+    document.querySelector("#preferred-date").min = new Date().toLocaleDateString("en-CA");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      navigation.classList.toggle("is-open", !isOpen);
+      document.body.classList.toggle("nav-open", !isOpen);
+      menuToggle.innerHTML = `<i data-lucide="${isOpen ? "menu" : "x"}"></i>`;
+      if (window.lucide) lucide.createIcons();
+    });
+
+    navigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navigation.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+        if (window.lucide) lucide.createIcons();
+      });
+    });
+
+    bookingForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const fields = new FormData(bookingForm);
+      const subject = `Mercedes-Benz service request - ${fields.get("vehicle")}`;
+      const message = [
+        "Hello Chuma Benz,",
+        "",
+        "I would like to arrange a workshop visit.",
+        `Name: ${fields.get("name")}`,
+        `Phone: ${fields.get("phone")}`,
+        `Email: ${fields.get("email") || "Not provided"}`,
+        `Mercedes-Benz model: ${fields.get("vehicle")}`,
+        `Vehicle year: ${fields.get("year") || "Not provided"}`,
+        `Service requested: ${fields.get("service")}`,
+        `Preferred appointment date: ${fields.get("date") || "Flexible"}`,
+        "",
+        "Details:",
+        fields.get("message"),
+      ].join("\n");
+      window.location.href = `mailto:${bookingEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    });
+
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll(".reveal").forEach((element) => element.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
